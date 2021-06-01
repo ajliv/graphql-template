@@ -2,6 +2,8 @@
 
 # graphql-template
 
+[![CI](https://github.com/ajliv/graphql-template/actions/workflows/ci.yml/badge.svg)](https://github.com/ajliv/graphql-template/actions/workflows/ci.yml)
+
 Template repository for Node.js GraphQL services using [Apollo Server](https://www.apollographql.com/docs/apollo-server).
 
 - [Requirements](#requirements)
