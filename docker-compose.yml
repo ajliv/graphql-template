@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  app:
+    build:
+      context: .
+      target: dev
+    init: true
+    tty: true
+    env_file: .env.local
+    ports:
+      - '4000:4000'
+      - '9229:9229'
+    volumes:
+      - ./__generated__:/home/node/app/__generated__:delegated
+      - ./index.ts:/home/node/app/index.ts:delegated
+      - ./lib:/home/node/app/lib:delegated
+      - ./package.json:/home/node/app/package.json
+      - ./yarn.lock:/home/node/app/yarn.lock

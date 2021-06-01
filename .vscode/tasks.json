@@ -1,0 +1,21 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "npm",
+      "script": "codegen:watch",
+      "problemMatcher": [],
+      "label": "graphql-codegen --watch",
+      "detail": "Run graphql-codegen in watch mode",
+      "isBackground": true,
+      "presentation": {
+        "reveal": "silent",
+        "panel": "shared"
+      },
+      "runOptions": {
+        "runOn": "folderOpen",
+        "instanceLimit": 1
+      }
+    }
+  ]
+}

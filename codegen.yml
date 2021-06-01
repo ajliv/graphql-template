@@ -1,0 +1,19 @@
+overwrite: true
+schema: lib/graphql/schema.graphql
+
+hooks:
+  afterAllFileWrite:
+    - prettier --write
+
+generates:
+  __generated__/resolver-types.ts:
+    config:
+      contextType: ../lib/graphql/context#Context
+      useIndexSignature: true
+    plugins:
+      - add: &add
+          content:
+            - /* eslint-disable */
+            - // This file was automatically generated and should not be edited.
+      - typescript
+      - typescript-resolvers

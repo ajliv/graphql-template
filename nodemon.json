@@ -1,0 +1,7 @@
+{
+  "exec": "node -r ts-node/register",
+  "ext": "ts,graphql",
+  "signal": "SIGTERM",
+  "ignore": ["**/__generated__/*", "**/__tests__/*", "**/*.d.ts", "**/*.spec*", "**/*.test*"],
+  "watch": ["lib", "index.ts"]
+}
