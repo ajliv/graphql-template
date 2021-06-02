@@ -11,24 +11,5 @@
         "/home/node/app/*": "${workspaceRoot}/*"
       }
     }
-    // {
-    // "type": "node",
-    // "request": "launch",
-    // "name": "Docker: Launch Node",
-    // "preLaunchTask": "tsc: watch",
-    // "runtimeExecutable": "docker",
-    // "runtimeArgs": ["compose", "up", "--build"],
-    // "address": "0.0.0.0",
-    // "port": 9229,
-    // "restart": true,
-    // "timeout": 600000,
-    // "localRoot": "${workspaceFolder}",
-    // "remoteRoot": "/home/node/app"
-    // "outFiles": ["${workspaceFolder}/dist/**/**.js"],
-    // "skipFiles": ["<node_internals>/**/*.js"],
-    // "console": "integratedTerminal",
-    // "internalConsoleOptions": "neverOpen",
-    // "sourceMaps": true
-    // }
   ]
 }

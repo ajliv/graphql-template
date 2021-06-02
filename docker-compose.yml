@@ -6,7 +6,9 @@ services:
       target: dev
     init: true
     tty: true
-    env_file: .env.local
+    environment:
+      LOG_FORMAT: tiny
+      LOG_LEVEL: debug
     ports:
       - '4000:4000'
       - '9229:9229'
