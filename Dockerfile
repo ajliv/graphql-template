@@ -16,7 +16,8 @@ CMD [ "nodemon", "--inspect=0.0.0.0:9229", "index.ts" ]
 ### BUILD PHASE
 FROM dev AS build
 USER node
-RUN yarn install --production --ignore-optional --ignore-scripts --prefer-offline
+RUN yarn build && \
+    yarn install --production --ignore-optional --ignore-scripts --prefer-offline
 
 ### PROD PHASE
 FROM node:14-alpine
@@ -24,8 +25,7 @@ WORKDIR /home/node/app
 RUN chown -R node:node .
 USER node
 COPY --chown=node:node --from=build dist dist/
-COPY --chown=node:node --from=build node_modules node_modules/
-COPY package.json .
+COPY --chown=node:node --from=build node_modules dist/node_modules/
 EXPOSE 4000
 ENV NODE_ENV=production
 CMD [ "node", "dist/index.js" ]
