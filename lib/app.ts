@@ -6,11 +6,9 @@ import { server } from './graphql/server';
 import { logger } from './logger';
 import { routes } from './routes';
 
-const app = express();
+export const app = express();
 
 app.set('trust proxy', true);
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan(LOG_FORMAT, { stream: { write: (str) => logger.info(str.replace(/\n$/, '')) } }));
 app.use(server.getMiddleware({ path: GRAPHQL_PATH }), routes);
-
-export { app };
