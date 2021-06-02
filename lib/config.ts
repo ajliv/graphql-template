@@ -1,5 +1,7 @@
 import joi from 'joi';
 
+import { logger } from './logger';
+
 const schema = joi.object({
     LOG_FORMAT: joi.string().default('combined'),
 });
@@ -7,7 +9,7 @@ const schema = joi.object({
 const { error, value } = schema.validate(process.env, { convert: true, stripUnknown: true });
 
 if (error) {
-    console.error(error.stack);
+    logger.error(error.stack);
     process.exit(1);
 }
 

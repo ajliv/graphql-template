@@ -2,12 +2,8 @@ import express from 'express';
 
 import { infoHandler, notFoundHandler, errorHandler } from './utils/route-handlers';
 
-export const routes = () => {
-    const router = express.Router();
+export const routes = express.Router();
 
-    router.get('/', infoHandler());
-    router.use(notFoundHandler());
-    router.use(errorHandler());
-
-    return router;
-};
+routes.get('/', infoHandler());
+routes.use(notFoundHandler());
+routes.use(errorHandler());
