@@ -3,8 +3,8 @@ import morgan from 'morgan';
 
 import { GRAPHQL_PATH, LOG_FORMAT } from './config';
 import { server } from './graphql/server';
-import { logger } from './logger';
 import { routes } from './routes';
+import { logger } from './utils/logger';
 
 export const app = express();
 

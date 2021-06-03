@@ -3,7 +3,7 @@ import { join } from 'path';
 
 import { ApolloServer } from 'apollo-server-express';
 
-import { logger } from '../logger';
+import { logger } from '../utils/logger';
 
 import { createContext } from './context';
 import { resolvers } from './resolvers';

@@ -1,6 +1,6 @@
 import joi from 'joi';
 
-import { logger } from './logger';
+import { logger } from './utils/logger';
 
 const schema = joi.object({
     LOG_FORMAT: joi.string().default('combined'),
