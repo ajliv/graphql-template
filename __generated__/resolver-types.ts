@@ -17,7 +17,7 @@ export type Scalars = {
 
 export type Query = {
     __typename?: 'Query';
-    now?: Maybe<Scalars['String']>;
+    now: Scalars['String'];
 };
 
 export type WithIndex<TObject> = TObject & Record<string, any>;
@@ -132,11 +132,11 @@ export type QueryResolvers<
     ContextType = Context,
     ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']
 > = ResolversObject<{
-    now?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+    now: Resolver<ResolversTypes['String'], ParentType, ContextType>;
 }>;
 
 export type Resolvers<ContextType = Context> = ResolversObject<{
-    Query?: QueryResolvers<ContextType>;
+    Query: QueryResolvers<ContextType>;
 }>;
 
 /**

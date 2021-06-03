@@ -8,6 +8,7 @@ hooks:
 generates:
   __generated__/resolver-types.ts:
     config:
+      avoidOptionals: true
       contextType: ../lib/graphql/context#Context
       useIndexSignature: true
     plugins:
