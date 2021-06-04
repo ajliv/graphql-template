@@ -10,5 +10,5 @@ export const app = express();
 
 app.set('trust proxy', true);
 app.use(express.urlencoded({ extended: true }));
-app.use(morgan(LOG_FORMAT, { stream: { write: (str) => logger.info(str.replace(/\n$/, '')) } }));
+app.use(morgan(LOG_FORMAT, { stream: { write: (str) => logger.http(str.replace(/\n$/, '')) } }));
 app.use(server.getMiddleware({ path: GRAPHQL_PATH }), routes);
