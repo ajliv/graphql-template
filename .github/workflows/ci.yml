@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: docker-compose build
+      - run: docker build -t ${{ github.repository }} .
 
   test:
     runs-on: ubuntu-latest
